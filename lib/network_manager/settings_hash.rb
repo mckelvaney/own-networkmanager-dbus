@@ -5,10 +5,9 @@ class NetworkManager::SettingsHash < Hash
     connection_settings = {
       'id' => ssid,
       'uuid' => SecureRandom.uuid,
-      'type' => '802-11-wireless',
-      'name' => 'connection'
+      'type' => '802-11-wireless'
     }
-    # IMPORTANT NOTE: 
+    # IMPORTANT NOTE:
     # DBus required byte arrays to be a specific type format. Using ruby-dbus we can parse a DBus byte array object
     # by calling DBus::Type::Parser.new('ay'), where the characters 'a' refers to array, of type 'y' referring to byte.
     # See the DBus Specifications for more details: http://dbus.freedesktop.org/doc/dbus-specification.html
