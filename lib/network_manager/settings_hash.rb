@@ -14,8 +14,7 @@ class NetworkManager::SettingsHash < Hash
     security = (pass)? '802-11-wireless-security' : nil
     ssid = (ssid.kind_of?(String))? ssid.bytes.to_a : ssid
     wifi_settings = {
-      'ssid' => [DBus::Type::Parser.new('ay').parse[0], ssid],
-      'name' => '802-11-wireless'
+      'ssid' => [DBus::Type::Parser.new('ay').parse[0], ssid]
     }
     if security
       wifi_settings["security"] = security
@@ -34,8 +33,7 @@ class NetworkManager::SettingsHash < Hash
       end
     end
     ipv4_settings = {
-      'method' => 'auto',
-      'name' =>  'ipv4'
+      'method' => 'auto'
     }
 
     general_connection = {
