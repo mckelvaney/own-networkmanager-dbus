@@ -19,9 +19,8 @@ class NetworkManager::SettingsHash < Hash
     }
     if security
       wifi_settings["security"] = security
-      security_settings = {
-        'name' => '802-11-wireless-security'
-      }
+      security_settings = {}
+
       if(wpa_flags != 0)
         security_settings.merge!({
           'key-mgmt' => 'wpa-psk',
